@@ -1,0 +1,50 @@
+[package]
+name = "presentationpoint"
+version = "0.1.0"
+edition = "2024"
+description = "Offline PowerPoint-compatible presentation editor"
+license = "MIT"
+default-run = "presentationpoint"
+
+[package.metadata.presentationpoint.stack]
+window = "winit"
+gpu = "wgpu"
+chrome = "egui + egui-wgpu"
+gpu_vertices = "bytemuck"
+offscreen = "tiny-skia"
+text = "parley + swash + fontdb"
+ooxml = "zip + quick-xml + roxmltree"
+model = "serde + indexmap + slotmap + uuid"
+svg = "usvg + resvg"
+clipboard = "arboard"
+dialogs = "rfd"
+pdf = "pdf-writer"
+concurrency = "rayon + tokio"
+logging = "tracing"
+file_watching = "notify"
+
+[dependencies]
+bytemuck = { version = "1.25.0", features = ["derive"] }
+egui = { version = "0.37.0", features = ["default_fonts"] }
+egui-wgpu = { version = "0.37.0", features = ["winit"] }
+egui-winit = "0.37.0"
+futures = "0.3.34"
+indexmap = { version = "2.14.2", features = ["serde"] }
+quick-xml = "0.42.0"
+rfd = "0.17.2"
+roxmltree = "0.20.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+thiserror = "2.0.21"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.20", features = ["env-filter", "fmt"] }
+wgpu = "30.0.2"
+winit = "0.30.13"
+zip = { version = "2.4.2", default-features = false, features = ["deflate"] }
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"

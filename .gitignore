@@ -1,0 +1,25 @@
+/target/
+*.tmp
+
+# Local environment files. Keep examples shareable.
+.env
+.env.*
+!.env.example
+
+# Logs and editor swap/backup files.
+*.log
+*.swp
+*.swo
+*~
+*.orig
+*.rej
+
+# Per-user editor settings.
+.vscode/
+.idea/
+*.code-workspace
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini
